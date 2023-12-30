@@ -1,0 +1,13 @@
+{
+  "name": "design-system",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "author": "Juan Carlos Arias",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@splidejs/splide": "^4.1.4"
+  }
+}
