@@ -1,7 +1,7 @@
-import { Splide, SplideClass } from "./splide.min.js";
+import { SplideClass } from "./splide.min.js";
 import { API_URL } from "./contstants.js";
 
-const splide: Splide = new SplideClass(".splide");
+const splide = new SplideClass(".splide");
 splide.mount();
 
 const startDetailsNode = () => {
