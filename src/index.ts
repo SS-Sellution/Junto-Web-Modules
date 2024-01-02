@@ -1,7 +1,8 @@
-import Splide from "@splidejs/splide";
-import { API_URL } from "./contstants";
+import { Splide, SplideClass } from "./splide.min.js";
+import { API_URL } from "./contstants.js";
 
-new Splide(".splide").mount();
+const splide: Splide = new SplideClass(".splide");
+splide.mount();
 
 const startDetailsNode = () => {
   const nodes = document.querySelectorAll("details");
@@ -36,4 +37,4 @@ const start = () => {
 
 window.addEventListener("DOMContentLoaded", start);
 
-alert(API_URL);
+console.log(API_URL);
