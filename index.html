@@ -6,13 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Design System</title>
     <link href="./css/global.css" rel="stylesheet" />
+    <link href="./css/3-col-slide.css" rel="stylesheet" />
     <link href="./css/splide-core.min.css" rel="stylesheet" />
 
     <script type="module" src="./javascript/index.js"></script>
   </head>
   <body>
-    <div class="bg-secondary">
-      <div class="content padding-vertical-xl md">
+    <section class="bg-secondary">
+      <div class="content padding-vertical-xl md overflow-hidden">
+        <img
+          src="images/home/intro-video-player/Group 16315.png"
+          alt="lamp right"
+          class="lamp-right"
+        />
+        <img
+          src="images/home/intro-video-player/Group 16248.png"
+          alt="lamp left"
+          class="lamp-left"
+        />
+        <img
+          src="images/home/intro-video-player/Group 16306.png"
+          alt="assistant"
+          class="assistant"
+        />
+        <img
+          src="images/home/intro-video-player/Group 16310.png"
+          alt="Camera right"
+          class="camera-right"
+        />
+        <img
+          src="images/home/intro-video-player/Group 16311.png"
+          alt="Camera left"
+          class="camera-left"
+        />
         <h1 class="block center text-primary">
           Video Production for
           <span class="text-accent">
@@ -24,6 +50,52 @@
           We heko financial advisors build relationshpis at scale without
           draining your budget
         </p>
+        <div class="wistia-video">
+          <script
+            src="https://fast.wistia.com/embed/medias/ha83czat0q.jsonp"
+            async
+          ></script>
+          <script
+            src="https://fast.wistia.com/assets/external/E-v1.js"
+            async
+          ></script>
+
+          <div
+            class="wistia_responsive_padding"
+            style="padding: 56.21% 0 0 0; position: relative"
+          >
+            <div
+              class="wistia_responsive_wrapper"
+              style="
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 100%;
+              "
+            >
+              <div
+                class="wistia_embed wistia_async_ha83czat0q videoFoam=true"
+                style="height: 100%; width: 100%"
+              >
+                &nbsp;
+              </div>
+            </div>
+          </div>
+          <script type="text/javascript">
+            var video1;
+            addEventSimple(window, "load", start_video);
+
+            function start_video() {
+              video1 = Wistia.api("ha83czat0q");
+              video1.bind("end", function () {
+                console.log("Lenny was here.");
+              });
+            }
+            /*
+             */
+          </script>
+        </div>
         <p class="t3 text-primary center">TRUSTED BY LEADING COMPANIES</p>
 
         <div class="logo-scroller">
@@ -159,17 +231,88 @@
           </div>
         </div>
       </div>
-    </div>
-    <section class="splide" aria-label="Splide Basic HTML Example">
-      <div class="splide__track">
-        <ul class="splide__list">
-          <li class="splide__slide">Slide 01</li>
-          <li class="splide__slide">Slide 02</li>
-          <li class="splide__slide">Slide 03</li>
-        </ul>
+    </section>
+
+    <section>
+      <div class="content padding-vertical-xl md">
+        <div
+          class="splide three-columns-slider"
+          aria-label="Splide Basic HTML Example"
+        >
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <img src="./images/image.jpg" alt="1" />
+                <h4 class="text-accent-dark center">
+                  Reach A Wilder <br />Audience
+                </h4>
+                <p class="t3 text-tertiary center">
+                  With Junto Productions, you can create professional-looking
+                  videos to amplify your brand,
+                </p>
+                <a href="#" class="t4 round-button">Learn More</a>
+              </li>
+              <li class="splide__slide">
+                <img src="./images/image.jpg" alt="1" />
+                <h4 class="text-accent-dark center">
+                  Reach A Wilder <br />Audience
+                </h4>
+                <p class="t3 text-tertiary center">
+                  With Junto Productions, you can create professional-looking
+                  videos to amplify your brand,
+                </p>
+                <a href="#" class="t4 round-button">Learn More</a>
+              </li>
+              <li class="splide__slide">
+                <img src="./images/image.jpg" alt="1" />
+                <h4 class="text-accent-dark center">
+                  Reach A Wilder <br />Audience
+                </h4>
+                <p class="t3 text-tertiary center">
+                  With Junto Productions, you can create professional-looking
+                  videos to amplify your brand,
+                </p>
+                <a href="#" class="t4 round-button">Learn More</a>
+              </li>
+              <li class="splide__slide">
+                <img src="./images/image.jpg" alt="1" />
+                <h4 class="text-accent-dark center">
+                  Reach A Wilder <br />Audience
+                </h4>
+                <p class="t3 text-tertiary center">
+                  With Junto Productions, you can create professional-looking
+                  videos to amplify your brand,
+                </p>
+                <a href="#" class="t4 round-button">Learn More</a>
+              </li>
+              <li class="splide__slide">
+                <img src="./images/image.jpg" alt="1" />
+                <h4 class="text-accent-dark center">
+                  Reach A Wilder <br />Audience
+                </h4>
+                <p class="t3 text-tertiary center">
+                  With Junto Productions, you can create professional-looking
+                  videos to amplify your brand,
+                </p>
+                <a href="#" class="t4 round-button">Learn More</a>
+              </li>
+              <li class="splide__slide">
+                <img src="./images/image.jpg" alt="1" />
+                <h4 class="text-accent-dark center">
+                  Reach A Wilder <br />Audience
+                </h4>
+                <p class="t3 text-tertiary center">
+                  With Junto Productions, you can create professional-looking
+                  videos to amplify your brand,
+                </p>
+                <a href="#" class="t4 round-button">Learn More</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
-    <div>
+    <section>
       <div class="content padding-vertical-xl md">
         <div class="paddingless-column-container xs">
           <h2 class="block center text-accent">
@@ -237,8 +380,8 @@
           </div>
         </div>
       </div>
-    </div>
-    <div>
+    </section>
+    <section>
       <div
         class="content padding-vertical-xl two-column-flex reverse-on-mobile"
         style="--left: 30%; --right: 70%"
@@ -307,8 +450,8 @@
           </details>
         </div>
       </div>
-    </div>
-    <div>
+    </section>
+    <section>
       <div class="content">
         <div>
           <details data-details-group="moduleB" open>
@@ -373,7 +516,7 @@
           </details>
         </div>
       </div>
-    </div>
+    </section>
     <footer class="bg-footer">
       <div class="content padding-vertical-xl md">
         <div class="bottom-buttons">
