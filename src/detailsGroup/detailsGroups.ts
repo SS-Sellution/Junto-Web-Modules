@@ -1,29 +1,4 @@
-import { SplideClass } from "./splide.min.js";
-import { API_URL } from "./contstants.js";
-
-const splide = new SplideClass(".splide", {
-  type: "loop",
-  perPage: 3,
-  perMove: 3,
-  gap: 24,
-  arrows: false,
-  breakpoints: {
-    800: {
-      perPage: 2,
-      perMove: 1,
-      gap: 16,
-    },
-    400: {
-      perPage: 1,
-      perMove: 1,
-      gap: 16,
-      pagination: false,
-    },
-  },
-});
-splide.mount();
-
-const startDetailsNode = () => {
+export const startDetailsNodeGroups = () => {
   const nodes = document.querySelectorAll("details");
   const groups: Record<string, HTMLDetailsElement[]> = {};
   nodes.forEach((node) => {
@@ -49,11 +24,3 @@ const startDetailsNode = () => {
   });
   console.log(groups);
 };
-
-const start = () => {
-  startDetailsNode();
-};
-
-window.addEventListener("DOMContentLoaded", start);
-
-console.log(API_URL);
