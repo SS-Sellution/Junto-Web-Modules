@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "src",
     "sourceMap": false,
     "strict": true,
     "noUnusedLocals": true,
@@ -16,10 +17,13 @@
     "rootDir": "src",
     "skipLibCheck": true,
     "outDir": "javascript",
-    "module": "commonjs",
+    "module": "es6",
     "target": "es6",
     "exactOptionalPropertyTypes": true,
-    "noUncheckedIndexedAccess": true
+    "noUncheckedIndexedAccess": true,
+    "paths": {
+      "@app/*": ["./app/*"]
+    }
   },
-  "include": ["src"]
+  "include": ["src", "src/types/global.d.ts"]
 }

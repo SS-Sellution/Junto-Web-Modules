@@ -1,9 +1,4 @@
-import Splide from "@splidejs/splide";
-import { API_URL } from "./contstants";
-
-new Splide(".splide").mount();
-
-const startDetailsNode = () => {
+export const startDetailsNodeGroups = () => {
   const nodes = document.querySelectorAll("details");
   const groups: Record<string, HTMLDetailsElement[]> = {};
   nodes.forEach((node) => {
@@ -29,11 +24,3 @@ const startDetailsNode = () => {
   });
   console.log(groups);
 };
-
-const start = () => {
-  startDetailsNode();
-};
-
-window.addEventListener("DOMContentLoaded", start);
-
-alert(API_URL);
