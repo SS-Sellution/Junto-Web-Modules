@@ -1,5 +1,6 @@
 import { SplideClass } from "./splide.min.js";
 import { startDetailsNodeGroups } from "./detailsGroup/detailsGroups.js";
+import "./topMenu/index.js";
 const splide = new SplideClass("#home-slider", {
     type: "loop",
     flickMaxPages: 1,
