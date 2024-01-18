@@ -23,13 +23,32 @@ nodes.forEach((node) => {
         possibleSubMenu.classList.contains("sub-menu")) {
         node.data = {
             timeout: 0,
+            timeoutHideSubmenu: 0,
             hideSubmenu: () => {
                 clearTimeout(node.data.timeout);
-                node.data.timeout = setTimeout(() => node.classList.remove("mouse-over"), 500);
+                clearTimeout(node.data.timeoutHideSubmenu);
+                node.data.timeout = setTimeout(() => {
+                    node.classList.remove("fade-in-submenu");
+                    node.classList.remove("show-button-arrow");
+                }, 250);
+                node.data.timeoutHideSubmenu = setTimeout(() => {
+                    node.classList.remove("show-submenu");
+                }, 500);
             },
             showSubmenu: () => {
+                if (possibleSubMenu.classList.contains("one-col")) {
+                    possibleSubMenu.style.left =
+                        node.getBoundingClientRect().x +
+                            node.getBoundingClientRect().width / 2 +
+                            "px";
+                }
+                node.classList.add("show-submenu");
                 clearTimeout(node.data.timeout);
-                node.data.timeout = setTimeout(() => node.classList.add("mouse-over"), 20);
+                clearTimeout(node.data.timeoutHideSubmenu);
+                node.data.timeout = setTimeout(() => {
+                    node.classList.add("fade-in-submenu");
+                    node.classList.add("show-button-arrow");
+                }, 20);
             },
         };
         node.classList.add("has-sub-menu");
@@ -39,5 +58,7 @@ nodes.forEach((node) => {
         });
         node.addEventListener("mouseover", node.data.showSubmenu);
         node.addEventListener("mouseout", node.data.hideSubmenu);
+        possibleSubMenu.addEventListener("mouseover", node.data.showSubmenu);
+        possibleSubMenu.addEventListener("mouseout", node.data.hideSubmenu);
     }
 });

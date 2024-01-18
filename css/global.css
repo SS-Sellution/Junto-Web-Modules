@@ -790,29 +790,6 @@ nav > button:hover svg {
   }
 }
 
-nav > button.has-sub-menu::before {
-  position: absolute;
-  left: calc(50% - 10px);
-  bottom: -32px;
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  content: "";
-  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iLTEiIHk9IjEwLjMxMzciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgcng9IjQiIHRyYW5zZm9ybT0icm90YXRlKC00NSAtMSAxMC4zMTM3KSIgZmlsbD0iI0ZBRkFGQSIvPgo8L3N2Zz4K");
-  opacity: 0.5;
-  transform: translateY(10px) scale(0);
-  transition: opacity 100ms ease-in-out, transform 100ms ease-in-out;
-  transition-delay: 0;
-  z-index: 100;
-}
-
-nav button.has-sub-menu:hover::before {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  transition: opacity 250ms ease-in-out, transform 250ms ease-in-out;
-  transition-delay: 100ms;
-}
-
 header.scrolled .menu {
   background-color: var(--color-white);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -883,20 +860,52 @@ header.scrolled .menu nav > button:hover {
 }
 
 @media screen and (min-width: 801px) {
-  nav > button:hover + .sub-menu {
+  nav > button.has-sub-menu::before {
+    position: absolute;
+    left: calc(50% - 10px);
+    bottom: -32px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    content: "";
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iLTEiIHk9IjEwLjMxMzciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgcng9IjQiIHRyYW5zZm9ybT0icm90YXRlKC00NSAtMSAxMC4zMTM3KSIgZmlsbD0iI0ZBRkFGQSIvPgo8L3N2Zz4K");
+    opacity: 0;
+    transform: translateY(10px) scale(0);
+    transition: opacity 100ms ease-in-out, transform 100ms ease-in-out;
+    transition-delay: 0;
+    z-index: 100;
+  }
+  nav > button.show-button-arrow {
+    color: var(--color-text-accent);
+  }
+  nav > button.show-button-arrow svg {
+    transform: rotate(-90deg);
+  }
+
+  nav button.has-sub-menu.show-button-arrow::before {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: opacity 250ms ease-in-out, transform 250ms ease-in-out;
+  }
+  nav > button.show-submenu + .sub-menu {
     display: flex;
     opacity: 0;
-    transition-property: opacity;
-    transition-duration: 0ms;
+    transform: translate(-50%, -10px);
+    transition-property: opacity, transform;
+    transition-duration: 250ms;
     transition-timing-function: ease-in-out;
   }
-  nav > button.mouse-over:hover + .sub-menu,
-  nav > button.mouse-over + .sub-menu {
-    display: flex;
+  nav > button.show-submenu + .sub-menu.one-col {
+    width: calc(100% - 2 * var(--size-lg));
+    max-width: 340px;
+    flex-direction: column;
+    padding: var(--size-md);
+    row-gap: var(--size-sm);
+  }
+
+  nav > button.fade-in-submenu + .sub-menu {
     opacity: 1;
-    transition-property: opacity;
-    transition-duration: 500ms;
-    transition-timing-function: ease-in-out;
+    transform: translate(-50%, 0px);
   }
 }
 @media screen and (max-width: 800px) {
