@@ -1006,6 +1006,7 @@ header.scrolled .menu nav > button:hover {
   }
 
   .sub-menu,
+  .sub-menu.one-col,
   .sub-menu.three-col {
     display: none;
   }
@@ -1022,6 +1023,12 @@ header.scrolled .menu nav > button:hover {
   }
   .sub-menu.three-col > div {
     width: 100%;
+  }
+  nav > button + .sub-menu.one-col {
+    flex-direction: column;
+    padding-top: var(--size-xs);
+    padding-bottom: var(--size-md);
+    row-gap: var(--size-sm);
   }
 }
 

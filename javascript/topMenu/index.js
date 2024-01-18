@@ -33,10 +33,12 @@ nodes.forEach((node) => {
                 }, 250);
                 node.data.timeoutHideSubmenu = setTimeout(() => {
                     node.classList.remove("show-submenu");
+                    possibleSubMenu.style.left = "";
                 }, 500);
             },
             showSubmenu: () => {
-                if (possibleSubMenu.classList.contains("one-col")) {
+                if (possibleSubMenu.classList.contains("one-col") &&
+                    document.body.getBoundingClientRect().width > 800) {
                     possibleSubMenu.style.left =
                         node.getBoundingClientRect().x +
                             node.getBoundingClientRect().width / 2 +
