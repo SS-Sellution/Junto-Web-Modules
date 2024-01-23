@@ -1,5 +1,19 @@
 import { SplideClass } from "./splide.min.js";
 import { startDetailsNodeGroups } from "./detailsGroup/detailsGroups.js";
+import { Timeline } from "./ozine/Timeline.js";
+
+import "./topMenu/index.js";
+
+const timeline = new Timeline({
+  duration: 1000,
+});
+
+document.body.onmouseover = function () {
+  timeline.play();
+};
+document.body.onmouseout = function () {
+  timeline.reverse(1000);
+};
 
 const splide = new SplideClass("#home-slider", {
   type: "loop",
